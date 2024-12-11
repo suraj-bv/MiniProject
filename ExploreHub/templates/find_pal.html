@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+<header>
+    <img id="logo" src="../static/images/logo11.png" alt="logo">
+    <!-- a way to logout from the page -->
+    <p id="logout">
+        <a href="{{ url_for('login') }}">Logout</a>
+    </p>
+    <h1>EXPLORE HUB</h1>
+    <h1 id="greeting"> Nice to see you, {{ username }}!</h1> <br>
+</header>
+<nav class="navbar navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('matches') }}">Matches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('new_trip') }}">New Trip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('fullscreen_chat') }}">Fullscreen Chat</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<main>
+    <h3>Let's find you the best travel partner</h3>
+    <!-- in this div the user can view all his potential machtes. the view is sorted- the first suggestion is with the highest score  -->
+    <h4>Find your match here:</h4>
+    <div id="swipeArea">
+        <div id="no-recommendations-card">no recommendations</div>
+    </div>
+</main>
+
+ <!-- inject all the necessary data to the JS for the swiper -->
+<script> 
+    const trips_scores = [];
+    {% for pal, trip, score in trips_scores %}
+        trips_scores.push({ id: {{ pal.id }},
+        first_name: '{{ pal.first_name }}',
+        last_name: '{{ pal.last_name }}',
+        destination: '{{ trip.destination }}',
+        start_date: '{{ trip.start_date }}',
+        end_date: '{{ trip.end_date }}' });
+    {% endfor %}
+    const my_id =  {{ me.id }};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="../static/JS/match_swiper.js"></script> <!-- script for the match swip -->
+<script src="../static/JS/home.js"></script> <!-- script for the match swip -->
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import url('home.css');
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: white;
+    overflow-y: auto;
+}
+header {
+    display: flex;
+    background-image: linear-gradient(90deg, orange, lightgreen);
+    border-radius: 10px 10px 100px 100px;
+    height: 120px;
+}
+main {
+    margin-bottom: 30px; 
+}
+#logo {
+    height: 90px;
+    font-weight: 90px;
+    float: right;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+.register-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100px;
+    background-color: #f9f9f9;
+    /*border: 1px solid #ccc;*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    padding: 10px;
+}
+
+/* Label Styles */
+.register-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+/* Input Field Styles */
+.register-card input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+/* Select Styles */
+.register-card select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.register-card input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+ }
+
+ /* Submit Button Hover Styles */
+.register-card input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#home {
+    padding: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 450px) {
+    #date {
+        align-items: center;
+    }
+
+    .date-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .date-inputs input {
+        width: 100%;
+    }
+    h1{
+       font-size: 20px;
+    }
+}

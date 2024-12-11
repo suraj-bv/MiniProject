@@ -1,0 +1,121 @@
+
+
+/* Register Container Styles */
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: white;
+    overflow-y: auto;
+}
+header {
+    display: flex;
+    background-image: linear-gradient(90deg, orange, lightgreen);
+    border-radius: 10px 10px 100px 100px;
+    height: 120px;
+}
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    position: fixed; /* Fixed position to stick it at the bottom */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+    background-color: #f0f0f0; /* Background color */
+    padding: 10px 0; /* Padding for top and bottom */
+}
+#logo {
+    height: 90px;
+    font-weight: 90px;
+    float: right;
+}
+#back_to_login{
+    margin-bottom:30px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #444444;
+}
+.register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Label Styles */
+.register-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input Field Styles */
+.register-card input[type="text"],
+.register-card input[type="password"],
+.register-card input[type="email"],
+.register-card input[type="date"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* Select Styles */
+.register-card select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+/* Submit Button Styles */
+.register-card input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Submit Button Hover Styles */
+.register-card input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    width: 90%;
+    margin: 20px auto;
+  }
+}

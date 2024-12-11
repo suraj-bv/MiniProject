@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/register.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="../static/images/logo11.png" alt="logo">
+    </header>
+    <div class="register-container">
+        <div class="register-card">
+            <h1> Nice to meet you pal! </h1>
+            <h2> Register </h2>
+            <form action="/register" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth">
+
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender">
+
+                <label for="financial_nature">Financial Nature:</label>
+                <select id="financial_nature" name="financial_nature" required>
+                    <option value="spender">Spender</option>
+                    <option value="normal">Normal</option>
+                    <option value="saver">Saver</option>
+                </select>
+                
+                <label for="dietary_restrictions">Dietary Restrictions</label>
+                <select id="dietary_restrictions" name="dietary_restrictions" required>
+                    <option value="No restrictions">No restrictions</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                </select>
+    
+                <label for="language_match">Language</label>
+                <input type="text" id="language_match" name="language_match">
+
+                <input type="submit" value="Register">
+            </form>
+            
+            <p id = "back_to_login">Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* importing existing css file of home page */
+@import url('home.css');
+/* Override styles from home.css */
+/* Ensure chat takes up most of the screen */
+.chat-popup {
+    width: 90%; /* Adjust width as needed */
+    height: 75vh; /* Take up most of the screen */
+    bottom: 10%; /* Center vertically */
+}
+
+/* Adjust chat content height to ensure buttons remain reachable */
+.chat-content {
+    max-height: calc(100% - 120px); /* Adjust based on your button height */
+    overflow-y: auto;
+}
+
+/* Remove minimize button */
+.minimize-button {
+    display: none; /* Hide minimize button */
+}
+/* Style back to normal button */
+
+.back-to-minimized {
+    background-color: #cfe2f3;
+    color: black;
+    border-radius:30px;
+    padding: 10px 5px ; /* Adjust padding to make the button wider */
+    width: auto; /* Allow button width to adjust based on content */
+    margin-right: auto; /* Pushes the button to the left */
+    margin-left: 0; /* Ensure no additional left margin */
+}
+

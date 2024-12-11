@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for the document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Chat</title>
+    
+    <!-- Including jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
+    <!-- Including Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Link to custom CSS file for fullscreen chat -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/full_screen_chat.css') }}">
+</head>
+<body>
+    <!-- Header section with logo and logout link -->
+    <header>
+        <img id="logo" src="../static/images/logo11.png" alt="logo">
+        <p id="logout">
+            <a href="{{ url_for('login') }}">Logout</a>
+        </p>
+    </header>
+
+    <!-- Chat popup section -->
+    <div id="chatPopup" class="chat-popup">
+        <!-- Chat header with buttons for minimizing and normal display -->
+        <div id="chatHeader" class="chat-header">
+            <button id="backToNormalButton" class="button back-to-minimized">Back to minimized display</button>
+            <button id="minimizeButton" class="minimize-button">-</button>
+        </div>
+        <!-- Chat content area -->
+        <div id="chatContent" class="chat-content"></div>
+        <!-- Input field for user messages -->
+        <input id="chatInput" class="chat-input" type="text" placeholder="Type your message...">
+        <!-- Button to send chat message -->
+        <button id="sendChat" class="send-chat">Send</button>
+        <!-- Button to export chat to PDF -->
+        <button id="exportChat" class="export-chat">Export to PDF</button>
+        <!-- Button to clear chat history -->
+        <button id="clearChatButton" class="clear-chat button">Clear Chat</button>
+    </div>
+
+    <!-- Minimized chat button -->
+    <div id="minimizedChat" class="minimized-chat">Open Chat</div>
+
+    <!-- Including custom JavaScript file for chat functionality -->
+    <script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+    <script>
+        // Event listener for the "Back to minimized display" button
+        const backToNormalButton = document.getElementById("backToNormalButton");
+        backToNormalButton.addEventListener("click", function() {
+            const chatHistory = getCurrentChatHistory();
+            // Store chat history in sessionStorage
+            sessionStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+            // Redirect to the home page or another specified page
+            window.location.href = "/"; // Redirect to the home page or wherever you want
+        });
+    </script>
+
+    <!-- Footer section -->
+    <!-- <footer>
+      <p>This website was created with lots of love and effort by Adi, Guy, and Yuval. All rights reserved to Adi, Guy, and Yuval &copy;</p>
+    </footer> -->
+</body>
+</html>
